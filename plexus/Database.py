@@ -19,7 +19,7 @@ class Database:
 
 	def insert(self, pkt, session):
 		try:
-			row = Packets(ip_src = pkt.ip.src, ip_dst = pkt.ip.dst)
+			row = Packets(ip_src = pkt.ip.src, ip_dst = pkt.ip.dst, layer=pkt.highest_layer)
 			session.add(row)
 			
 		except Exception as e:

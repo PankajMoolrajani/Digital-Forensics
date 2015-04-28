@@ -10,5 +10,6 @@ class Packets(Base):
 	id = Column(Integer, primary_key=True)
 	ip_src = Column(String(11), nullable=False)
 	ip_dst = Column(String(11), nullable=False)
+	layer = Column(String(10), nullable=False)
 
 	

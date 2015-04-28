@@ -1,11 +1,19 @@
 import pyshark
 import argparse
 from Database import *
+from DetectScan import *
 
 def main():
 	args = arguments()
 	if args.file:
-		db = Database(args.file)	
+		#db = Database(args.file)
+		pass
+	if args.portscan:
+		obj_scan = DetectScan()
+		obj_scan.port_scan(args.file)
+	if args.hostscan:
+		obj_scan = DetectScan()
+		obj_scan.host_scan(args.file)
 
 def arguments():
 	parser = argparse.ArgumentParser()
